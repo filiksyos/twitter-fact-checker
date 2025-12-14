@@ -7,7 +7,8 @@ export const maxDuration = 60;
 
 const exa = new Exa(process.env.EXA_API_KEY as string);
 const openai = new OpenAI({
-  apiKey: process.env.OPENAI_API_KEY,
+  apiKey: process.env.OPENROUTER_API_KEY,
+  baseURL: 'https://openrouter.ai/api/v1',
 });
 
 export async function POST(req: NextRequest) {
@@ -39,9 +40,9 @@ export async function POST(req: NextRequest) {
       exaAnswer = 'Unable to verify with external sources.';
     }
 
-    // Step 2: Use OpenAI to analyze and mark up the text
+    // Step 2: Use OpenRouter to analyze and mark up the text
     const completion = await openai.chat.completions.create({
-      model: 'gpt-4-turbo-preview',
+      model: 'openai/gpt-4.1',
       messages: [
         {
           role: 'system',

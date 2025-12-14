@@ -1,0 +1,70 @@
+/* Fact-check markup styles */
+
+/* Incorrect text - red underline */
+.factcheck-incorrect {
+  color: inherit;
+  background: rgba(239, 68, 68, 0.1);
+  border-bottom: 2px solid #ef4444;
+  padding: 2px 0;
+  cursor: help;
+  position: relative;
+}
+
+.factcheck-incorrect:hover {
+  background: rgba(239, 68, 68, 0.2);
+}
+
+/* Correction text - green */
+.factcheck-correction {
+  color: #10b981;
+  font-weight: 500;
+  margin-left: 4px;
+  padding: 2px 6px;
+  background: rgba(16, 185, 129, 0.1);
+  border-radius: 4px;
+  font-size: 0.9em;
+}
+
+/* Verified badge */
+.factcheck-verified {
+  display: inline-block;
+  margin-left: 8px;
+  padding: 2px 8px;
+  background: rgba(16, 185, 129, 0.1);
+  color: #10b981;
+  border-radius: 12px;
+  font-size: 0.75em;
+  font-weight: 600;
+}
+
+/* Warning badge */
+.factcheck-warning {
+  display: inline-block;
+  margin-bottom: 8px;
+  padding: 6px 12px;
+  background: rgba(245, 158, 11, 0.1);
+  color: #d97706;
+  border-radius: 8px;
+  font-size: 0.85em;
+  font-weight: 600;
+  border-left: 3px solid #f59e0b;
+}
+
+/* Loading state */
+article[data-fact-checked="loading"] {
+  opacity: 0.7;
+  position: relative;
+}
+
+article[data-fact-checked="loading"]::after {
+  content: '🔍 Checking...';
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  padding: 4px 8px;
+  background: rgba(29, 155, 240, 0.1);
+  color: #1d9bf0;
+  border-radius: 8px;
+  font-size: 0.75em;
+  font-weight: 600;
+}

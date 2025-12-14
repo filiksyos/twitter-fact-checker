@@ -68,3 +68,34 @@ article[data-fact-checked="loading"]::after {
   font-size: 0.75em;
   font-weight: 600;
 }
+
+/* Check button */
+.factcheck-button {
+  background: #1d9bf0;
+  color: white;
+  border: none;
+  padding: 6px 12px;
+  border-radius: 20px;
+  font-size: 0.875rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.2s;
+  display: inline-flex;
+  align-items: center;
+  gap: 4px;
+}
+
+.factcheck-button:hover:not(:disabled) {
+  background: #1a8cd8;
+  transform: translateY(-1px);
+}
+
+.factcheck-button:active:not(:disabled) {
+  transform: translateY(0);
+}
+
+.factcheck-button:disabled {
+  opacity: 0.6;
+  cursor: not-allowed;
+  background: #536471;
+}
